@@ -1,0 +1,45 @@
+.switch {
+  display: none;
+}
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.switch-label:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.switch:checked + .switch-label {
+  background-color: #7c7b7b; /* color when switch is ON */
+}
+
+.switch:checked + .switch-label:before {
+  transform: translateX(26px);
+}
+
+.switch-contaner{
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.switch-contaner p{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 24px;
+}

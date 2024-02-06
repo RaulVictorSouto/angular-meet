@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="login-box">
+    <app-logo class="logo"></app-logo>
+    <h1>Informe seu nome, por gentileza</h1>
+    <input type="text" placeholder="Seu nome" [(ngModel)]="userName"/>
+
+    <a [routerLink]="['/meeting']" (click)="setUserNameAndNavigate()">Entrar</a>
+
+  </div>
+  <div class="botoes">
+    <app-switch-dark-mode></app-switch-dark-mode>
+    <button><i class="fas fa-microphone"></i></button>
+    <button><i class="fas fa-video"></i></button>
+  </div>
+<img src="https://blog.shift4shop.com/hubfs/iStock-1221598194.jpg" alt="capa">
+</div>
