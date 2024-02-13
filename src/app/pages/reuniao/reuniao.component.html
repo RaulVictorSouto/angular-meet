@@ -1,3 +1,32 @@
-<p>O nome de usuário é: {{ userName }}</p>
+<div class="container">
+  <div class="titleBar">
+    <app-logo></app-logo>
+    <app-switch-dark-mode></app-switch-dark-mode>
+  </div>
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+
+      <mat-grid-tile class="video-box">
+        <p class="video-description" [ngClass]="{'video-description-false': isBlack}">{{ userName }}</p>
+        <video #local_video [autoplay] = "true"></video>
+      </mat-grid-tile>
+
+      <mat-grid-tile class="video-box">
+        <p class="video-description">Convidado</p>
+        <video #received_video [autoplay] = "true"></video>
+      </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <div class="botoes">
+    <button (click)="toggleAudio()"><i class="fas fa-microphone"></i></button>
+    <button (click)="toggleLocalVideo()"><i class="fas fa-video"></i></button>
+    <button><i class="fa fa-phone"></i></button>
+    <button><i class="fa fa-comments"></i></button>
+  </div>
+</div>
+
+
+
 
 

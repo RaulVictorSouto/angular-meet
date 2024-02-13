@@ -1,0 +1,62 @@
+.titleBar{
+  height: 6em;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  justify-content: space-around;
+
+}
+
+
+.botoes {
+  margin-top: 2em;
+  width: 50em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 4em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botoes button{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.botoes button:hover{
+  width: 60px;
+  border-radius: 100%;
+}
+
+p.video-description{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+}
+
+p.video-description-false {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.video-box{
+  border: #000 solid 1px;
+  width: 45%;
+  background-color: #fff;
+}

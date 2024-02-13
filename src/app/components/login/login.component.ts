@@ -4,7 +4,7 @@ import { SwitchDarkModeComponent } from "../switch-dark-mode/switch-dark-mode.co
 import {RouterModule} from '@angular/router';
 import { LogoComponent } from "../logo/logo.component";
 import { ReuniaoComponent } from "../../pages/reuniao/reuniao.component";
-import { UserService } from '../../shared.service';
+import { UserService } from '../../chat/shared.service';
 import { FormsModule } from '@angular/forms';
 
 
