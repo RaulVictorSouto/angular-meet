@@ -1,47 +1,53 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Message } from './types/message';
-import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
-
-export const WS_ENDPOINT = 'ws://localhost:8801';
+import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class DataService {
   userName: string = '';
+  isDarkMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  private socket$: WebSocketSubject<any>;
+  private socket$: WebSocketSubject<any> | any;
 
   private messagesSubject = new Subject<Message>();
   public messages$ = this.messagesSubject.asObservable();
 
-  constructor() {}
-
-  public connect(): void{
+  constructor() {
     this.socket$ = this.getNewWebSocket();
   }
 
-  sendMessage(msg: Message): void{
+  public connect(): void {
+    this.socket$ = this.getNewWebSocket();
+  }
+
+  sendMessage(msg: Message): void {
     console.log('Sending message: ' + msg.type);
     this.socket$.next(msg);
   }
 
-  public getNewWebSocket(): WebSocketSubject<any>{
+  public getNewWebSocket(): WebSocketSubject<any> {
     return webSocket({
-      url: WS_ENDPOINT,
+      url: environment.wsEndpoint,
       openObserver: {
         next: () => {
-          console.log('UserService: connection OK')
+          console.log('DataService: connection OK')
         }
       },
       closeObserver: {
         next: () => {
-          console.log('UserService: cnnection closed')
+          console.log('DataService: connection closed')
           this.socket$ = undefined;
           this.connect();
         }
       }
     });
+  }
+
+  toggleDarkMode(isDarkMode: boolean): void {
+    this.isDarkMode$.next(isDarkMode);
   }
 }

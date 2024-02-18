@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { InicioComponent } from "./pages/inicio/inicio.component";
+import { InicioComponent } from './pages/inicio/inicio.component';
 import { ReuniaoComponent } from "./pages/reuniao/reuniao.component";
 
 @Component({
@@ -11,7 +11,7 @@ import { ReuniaoComponent } from "./pages/reuniao/reuniao.component";
     imports: [RouterOutlet, InicioComponent, ReuniaoComponent]
 })
 export class AppComponent {
-  title = 'meet';
+  title = 'Friends';
 
   }
 
